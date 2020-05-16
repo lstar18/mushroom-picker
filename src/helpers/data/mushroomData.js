@@ -1,3 +1,5 @@
+const basket = [];
+
 const mushrooms = [
   {
     id: 'mushroom1',
@@ -180,7 +182,13 @@ const mushrooms = [
     isDeadly: false,
   },
 ];
+const pickAMushroom = () => {
+  const randomMushroom = mushrooms[Math.floor(Math.random() * mushrooms.length)];
+  basket.push(randomMushroom);
+};
 
 const getMushrooms = () => mushrooms;
 
-export default { getMushrooms };
+const getBasket = () => basket;
+
+export default { getMushrooms, getBasket, pickAMushroom };

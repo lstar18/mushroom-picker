@@ -8,6 +8,13 @@ import Mushroom from '../Mushroom/Mushroom';
 class Forest extends React.Component {
   static propTypes = {
     mushrooms: PropTypes.arrayOf(mushroomShape.mushroomShape),
+    pickMushroom: PropTypes.func.isRequired,
+  }
+
+  pickMushroomEvent = (e) => {
+    e.preventDefault();
+    const { pickMushroom } = this.props;
+    pickMushroom();
   }
 
   render() {
@@ -16,8 +23,12 @@ class Forest extends React.Component {
     <Mushroom key={mushroom.id} mushroom={mushroom}/>
     ));
     return (
-      <div className="Forest d-flex flex-wrap">
+      <div className="Forest">
+        <h3 className="forest-header"> Forest Of Mushrooms </h3>
+        <button className= "btn btn-success" onClick={this.pickMushroomEvent}> Pick a Mushroom</button>
+        <div className="d-flex flex-wrap m-1">
         { displayMushrooms }
+      </div>
       </div>
     );
   }
