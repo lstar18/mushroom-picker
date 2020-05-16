@@ -184,11 +184,16 @@ const mushrooms = [
 ];
 const checkBasketforMushrooms = (randomMushroom) => {
   if (basket.length > 1 && randomMushroom.isPoisonous) {
+    basket.pop();
     basket.splice(0, 2);
     alert('You grabbed a poisonous mushroom, you could die');
   } else if (randomMushroom.isPoisonous) {
     basket = [];
-  } else {
+  } else if (randomMushroom.isDeadly) {
+    basket = [];
+    alert('You are dead');
+  } 
+  else {
     basket.push(randomMushroom);
   }
 };
