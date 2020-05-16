@@ -1,4 +1,4 @@
-const basket = [];
+let basket = [];
 
 const mushrooms = [
   {
@@ -182,13 +182,25 @@ const mushrooms = [
     isDeadly: false,
   },
 ];
+const checkBasketforMushrooms = (randomMushroom) => {
+  if (basket.length > 1 && randomMushroom.isPoisonous) {
+    basket.splice(0, 2);
+    alert('You grabbed a poisonous mushroom, you could die');
+  } else if (randomMushroom.isPoisonous) {
+    basket = [];
+  } else {
+    basket.push(randomMushroom);
+  }
+};
 const pickAMushroom = () => {
   const randomMushroom = mushrooms[Math.floor(Math.random() * mushrooms.length)];
-  basket.push(randomMushroom);
+  checkBasketforMushrooms(randomMushroom);
 };
 
 const getMushrooms = () => mushrooms;
 
 const getBasket = () => basket;
 
-export default { getMushrooms, getBasket, pickAMushroom };
+export default {
+  getMushrooms, getBasket, pickAMushroom,
+};

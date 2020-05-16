@@ -17,10 +17,9 @@ class App extends React.Component {
   }
 
   pickMushroom = () => {
-    const mushrooms = mushroomData.getMushrooms();
-    const basket = mushroomData.getBasket();
     mushroomData.pickAMushroom();
-    this.setState({ mushrooms, basket });
+    const basket = mushroomData.getBasket();
+    this.setState({ basket });
   }
 
   render() {
