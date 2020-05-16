@@ -183,6 +183,7 @@ const mushrooms = [
   },
 ];
 const checkBasketforMushrooms = (randomMushroom) => {
+  const sortedBasket = Array.from(new Set(basket));
   if (basket.length > 1 && randomMushroom.isPoisonous) {
     basket.pop();
     basket.splice(0, 2);
@@ -195,7 +196,9 @@ const checkBasketforMushrooms = (randomMushroom) => {
     const mushroomTwo = regularMushroom[Math.floor(Math.random() * regularMushroom.length)];
     const mushroomThree = regularMushroom[Math.floor(Math.random() * regularMushroom.length)];
     basket.push(mushroomOne, mushroomTwo, mushroomThree);
-    alert('You grabbed the magic mushroom!!!');
+    alert('You grabbed the magic mushroom!!! You WIN!');
+  } else if (sortedBasket.length === 15) {
+    alert('You WIN!!!');
   } else {
     basket.push(randomMushroom);
   }
