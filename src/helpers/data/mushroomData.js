@@ -192,8 +192,7 @@ const checkBasketforMushrooms = (randomMushroom) => {
   } else if (randomMushroom.isDeadly) {
     basket = [];
     alert('You are dead');
-  } 
-  else {
+  } else {
     basket.push(randomMushroom);
   }
 };
