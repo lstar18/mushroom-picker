@@ -9,6 +9,7 @@ class Forest extends React.Component {
   static propTypes = {
     mushrooms: PropTypes.arrayOf(mushroomShape.mushroomShape),
     pickMushroom: PropTypes.func.isRequired,
+    checkMushroomBasket: PropTypes.func.isRequired,
   }
 
   pickMushroomEvent = (e) => {
