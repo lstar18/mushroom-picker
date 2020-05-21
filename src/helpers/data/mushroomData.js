@@ -187,9 +187,13 @@ const checkBasketforMushrooms = (randomMushroom) => {
   if (basket.length > 1 && randomMushroom.isPoisonous) {
     basket.pop();
     basket.splice(0, 2);
-    alert('You grabbed a poisonous mushroom, you could die');
-  } else if (randomMushroom.isPoisonous || randomMushroom.isDeadly) {
+    alert('You grabbed a poisonous mushroom, you could die!');
+  } else if (randomMushroom.isPoisonous) {
     basket = [];
+    alert('You grabbed a poisonous mushroom, you could die!');
+  } else if (randomMushroom.isDeadly) {
+    basket = [];
+    alert('You grabbed a DEADLY mushroom, you will die :(! ');
   } else if (randomMushroom.isMagic) {
     const regularMushroom = mushrooms.filter((mushroom) => !mushroom.isDeadly && !mushroom.isMagic && !mushroom.isPoisonous);
     const mushroomOne = regularMushroom[Math.floor(Math.random() * regularMushroom.length)];
