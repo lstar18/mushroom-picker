@@ -1,4 +1,18 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
+This project was an single page app.  It was created for the user to go mushroom picking in a forest.  There are different types of mushrooms that cause various things to happen to the users basket.  If the user picks a magical mushroom, then they win! If a user gets one non-poisonous, non-deadly or non-magical mushroom in their basket, they can also win that way! If a user picks a poisonous mushroom, two mushrooms in their basket die, and if they pick a deadly mushroom, all mushrooms in their basket die! This project was deployed with Firebase and used technologies such as ES6 modules methods.
+
+## Screenshots
+This is the main page of the application:
+![This is a screenshot of the main page of project](screenshots/mushroom_picker_ss.png)
+This is basket of mushroom a user has when they pick a mushroom in the forest:
+![This is a screenshot of a featured board in the project](screenshots/basket_mushrooms_ss.png)
+
+## How To Run
+1. Clone down this repo
+1. Make sure you have  http-serve installed via npm. If not, get it [HERE](https://npmjs.com/package/http-server).
+1. On your command line run `hs -p 9999`
+1. In your browser go to `http://localhost:9999`
 
 ## Available Scripts
 
